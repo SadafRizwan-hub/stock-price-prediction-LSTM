@@ -1,0 +1,38 @@
+Stock Price Prediction - Summary
+
+Objective:
+The code is designed to predict stock prices using historical data, specifically focusing on Apple Inc.
+(AAPL) stock from 2010 to 2019.
+
+Data Collection:
+- Historical stock data is fetched using the `yfinance` library for the specified time period.
+- The data is processed by removing unnecessary columns (Date and Adjusted Close) and is reset
+to ensure the indices are in order.
+
+Visualization:
+- A line plot of the closing prices is created.
+- Moving Averages (100-day and 200-day) are calculated and plotted to observe the trend over time.
+
+Data Preparation:
+- The data is split into training (70%) and testing (30%) sets.
+- The training data is normalized using `MinMaxScaler` to scale the values between 0 and 1.
+- Sequential data is prepared for the model by creating sequences of 100 time steps.
+
+Model Building:
+- A Sequential LSTM (Long Short-Term Memory) model is built using Keras.
+- The model consists of multiple LSTM layers with dropout for regularization.
+- The model is compiled using the Adam optimizer and trained for 50 epochs.
+
+Prediction:
+- The model is used to predict the stock prices on the test data.
+- The predicted prices are rescaled to the original scale.
+- A plot is generated comparing the original prices with the predicted prices.
+
+Outcome:
+- The model successfully learns the pattern from the historical data and makes predictions, which
+are visualized alongside the actual prices for comparison.
+
+Next Steps:
+- The model could be further refined by tuning hyperparameters or incorporating additional features.
+- Explore the inclusion of different stock data or additional technical indicators to improve prediction
+accuracy.
