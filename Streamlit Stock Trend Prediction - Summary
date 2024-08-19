@@ -1,0 +1,35 @@
+Streamlit Stock Trend Prediction - Summary
+
+Objective:
+The code is designed to build an interactive web application using Streamlit that predicts stock prices. The user can input a stock ticker, and the app fetches historical data, visualizes it, and makes predictions using a pre-trained LSTM model.
+
+Data Collection:
+-	Historical stock data is fetched using the `yfinance` library based on user input for the stock ticker.
+The data spans from January 1, 2010, to December 31, 2019.
+
+Data Description:
+-	The app provides a statistical summary of the stock data from the selected period, helping users understand key metrics such as mean, standard deviation, and quartiles.
+
+Visualizations:
+-	Closing Price vs Time: A line plot showing the closing prices over time.
+-	Closing Price vs Time with 100-day Moving Average: Adds a 100-day moving average (MA) to the plot to smooth short-term fluctuations.
+-	Closing Price vs Time with 100-day and 200-day Moving Averages: Further enhances the visualization by adding both 100-day and 200-day moving averages.
+
+Data Preparation:
+-	The data is split into training (70%) and testing (30%) sets.
+-	The training data is scaled using `MinMax Scaler` to normalize values between 0 and 1.
+
+Model Loading:
+-	A pre-trained LSTM model is loaded to make predictions on the stock price.
+
+Prediction:
+-	The model is used to predict stock prices based on the test data.
+-	The predicted prices are rescaled to the original scale using the inverse of the scaling factor.
+-	A comparison graph is generated showing the predicted prices against the actual prices.
+
+Outcome:
+-	The application provides an intuitive interface for users to visualize stock trends and make predictions, offering a clear comparison between actual and predicted stock prices.
+
+Next Steps:
+-	The model's accuracy could be improved by experimenting with different architectures or hyperparameters.
+-	The application could be extended to include more features like real-time data updates or additional stock analysis tools.
